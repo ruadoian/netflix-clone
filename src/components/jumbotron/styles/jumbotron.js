@@ -9,36 +9,36 @@ export const Inner = styled.div`
     margin: auto;
     width: 100%;
     
-    @media (max-width: 1600px) {
+    @media (max-width: 1000px) {
         flex-direction: column;
+    }
+`;
+
+export const Pane = styled.div`
+    width: 50%;
+    
+    @media (max-width: 1000px) {
+        width: 100%;
+        padding: 0 45px;
+        text-align: center;
     }
 `;
 
 export const Item = styled.div`
     display: flex;
-    border-bottom:8px solid #222;
-    padding:50px 5%;
-    color:white;
-    overflow:hidden;
+    border-bottom: 8px solid #222;
+    padding: 50px 5%;
+    color: white;
+    overflow: hidden;
 `;
 
 export const Container = styled.section`
-    background-color:black;
+    background-color: #0a0909;
     
-    @media(max-width:1000px;){
-        ${Item}:last-of-type h2{
-            margin-bottom:50px;
+    @media (max-width: 1000px) {
+        ${Item}:last-of-type h2 {
+            margin-bottom: 50px;
         }
-    }
-`;
-
-export const Pane = styled.div`
-    width 50%;
-
-    @media(max-width:1000px;){
-        width:100px;
-        padding: 0 45px;
-        text-align:center;
     }
 `;
 
