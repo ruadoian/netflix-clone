@@ -5,15 +5,14 @@ import { FooterContainer } from "../containers/footer"
 import { FaqsContainer} from "../containers/faqs"
 import { HeaderContainer } from "../containers/header"
 
+
 export default function Home(){
     return(
         <>
         <HeaderContainer>
-      
             <Features>
                 <Features.Title>Unlimited films, TV Programmes and more</Features.Title>
                 <Features.Subtitle>Watch anywhere, cancel anytime</Features.Subtitle>
-                
                 <OptForm>
                     <OptForm.Input placeholder="Email Address"></OptForm.Input>
                     <OptForm.Button>Try it now</OptForm.Button>

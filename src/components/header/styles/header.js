@@ -4,7 +4,7 @@ import { Link as ReachRouterLink } from 'react-router-dom';
 export const Background = styled.section`
     display: flex;
     flex-direction: column;
-    background: url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/background-image.jpeg')}) top left / cover no-repeat;
+    background: url(${({ src }) => (src ? `../images/misc/${src}.jpg` : '../images/misc/background-image.jpeg')}) top left / cover no-repeat ;
     @media (max-width: 1100px) {
         ${({ dontShowOnSmallViewPort }) => dontShowOnSmallViewPort && `background: none;`}
     }
@@ -17,7 +17,7 @@ export const Container = styled.div`
     padding: 18px 0;
     justify-content: space-between;
     align-items: center;
-    
+
     a {
         display: flex;
     }

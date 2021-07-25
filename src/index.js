@@ -1,17 +1,16 @@
 import React from "react"
 import RouterDom from "react-dom"
 import {App} from "./App"
-import {GlobalStyle} from "./global-styles"
+import {GlobalStyles} from "./global-styles"
 import {FirebaseContext} from "./context/firebase"
 
 const config={
-    apiKey:'',
-    authDomain:'',
-    databaseURL:'',
-    projectId:'',
-    storageBucket:'',
-    messegingSenderId:'',
-    appId:''
+    apiKey: "AIzaSyBe1jQdfmTegpVWqF8T1EgLFgoenElYof8",
+    authDomain: "netflix-ruadoian.firebaseapp.com",
+    projectId: "netflix-ruadoian",
+    storageBucket: "netflix-ruadoian.appspot.com",
+    messagingSenderId: "1087215540017",
+    appId: "1:1087215540017:web:195fc7ac2e426260784210"
 }
 
 const firebase = window.firebase.initializeApp(config);
@@ -19,7 +18,7 @@ const firebase = window.firebase.initializeApp(config);
 RouterDom.render(
     <>
     <FirebaseContext.Provider value={{firebase:window.firebase}}>
-        <GlobalStyle/>
+        <GlobalStyles/>
         <App/>
     </FirebaseContext.Provider>
     </>
