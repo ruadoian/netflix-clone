@@ -1,5 +1,5 @@
-import React,{useState, useContext} from "react"
-import {Header} from "../components/"
+import React,{useState, useContext, useEffect} from "react"
+import {Header, Loading} from "../components/"
 import * as ROUTES from "../constants/routes"
 import {FirebaseContext} from "../context/firebase"
 import {FooterContainer} from "./footer"
@@ -8,7 +8,7 @@ import {SelectProfileContainer} from "./profile"
 export function BrowseContainer(){
     const [profile, setProfile] = useState()
     const [category, setCategory] = useState('series')
-    const [loading, setLoading] = useState()
+    const [loading, setLoading] = useState(true)
     const [searchTerm, setSearchTerm] = useState('')
 
     const {firebase} = useContext(FirebaseContext)
@@ -18,8 +18,15 @@ export function BrowseContainer(){
         photoURL:"usericon-1"
     }
 
+    useEffect(()=>{
+        setTimeout(()=>{
+            setLoading(false)
+        },3000)
+    }, [user])
+
     return profile ? 
         (<>
+            {loading ? <Loading src={user.photoURL}/> : <Loading.ReleaseBody/>}
             <Header src="joker02" dontShowOnSamillViewPort>
                 <Header.Frame>
                     <Header.Group>
