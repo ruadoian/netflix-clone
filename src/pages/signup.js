@@ -10,27 +10,26 @@ import * as ROUTES from "../constants/routes"
 export default function Signup(){
     const history = useHistory()
     const [firstName, setFirstName] = useState("");
-    const [email, setEmail] = useState("");
+    const [emailAddress, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState();
     const {firebase} = useContext(FirebaseContext);
 
    
 
-    const isInvalid = firstName ==="" | email ==="" | password === "" 
+    const isInvalid = firstName ==="" | emailAddress ==="" | password === "" 
 
     const handleSignup = (e)=>{
         e.preventDefault()
 
         firebase
         .auth()
-        .createUserWithEmailAndPassword(email, password)
+        .createUserWithEmailAndPassword(emailAddress, password)
         .then(res => 
             res.user
             .updatedProfile({
                 displayName:firstName,
                 photoURL: Math.floor(Math.Random * 5)+1
-
             })
             .then(()=>{
                 setEmail('');
@@ -54,7 +53,7 @@ export default function Signup(){
                         />
 
                     <Form.Input 
-                        value={email} 
+                        value={emailAddress} 
                         placeholder="Email Address"
                         onChange={({target}) => setEmail(target.value)}
                         />
