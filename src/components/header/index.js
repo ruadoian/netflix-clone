@@ -65,15 +65,16 @@ Header.FeatureCallOut = function HeaderFeatureCallOut({children, ...restProps}){
 
 Header.Search = function SearchHeader({searchTerm, setSearchTerm, ...restProps}){
     const [searchActive, setSearchActive] = useState(false);
-    
+
     return (
         <Search {...restProps}>
             <SearchIcon onClick={()=> setSearchActive(!searchActive)}>
                 <img src={"/images/icons/search-icon.png"} alt="search-icon" />
             </SearchIcon>
+            
             <SearchInput
                 value={searchTerm}
-                onClick={({target}) => setSearchActive(target.value)}
+                onChange={({target}) => setSearchTerm(target.value)}
                 active={searchActive}
                 placeholder="Search for films and series"
             />
