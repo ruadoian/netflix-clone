@@ -28,7 +28,7 @@ export function BrowseContainer({slides}){
 
     useEffect(()=>{
         setSlideRows(slides[category])
-    }, [category], slideRows)
+    }, [slides, category])
 
     useEffect(()=>{
         const fuse = new Fuse(slideRows, {keys:['data.description','data.title','data.genre']})
